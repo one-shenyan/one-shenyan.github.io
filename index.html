@@ -158,35 +158,95 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hello-world - 副本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-README" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/08/hello-world - 副本/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/08/hello-world - 副本/" class="archive-article-date">
-  	<time datetime="2017-04-08T05:46:47.542Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-08</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>#node-lesson4</p>
+<p>#反馈<br>老师后边讲的post方法，不进行读文件吗？为什么读文件后传过来的data数据为空对象<br>路径那里还不是很懂…<script src="/js/jquery.js"></script> 这样的路径后台应该怎么写呢<br>URL那里不是太理解….<br>post在讲一遍<br>都会，就是不知道node.js具体有啥用<br>突然多出来这么多东西，逻辑明白，就是太多东西记不住了呀，唉，有点蒙圈了，敲代码去咯<br>风吹起如花的流年，而你成为最美的讲师</p>
+<p>#复习</p>
+<h2 id="http-模块"><a href="#http-模块" class="headerlink" title="http 模块"></a>http 模块</h2><h3 id="使用-http-模块进行web开发"><a href="#使用-http-模块进行web开发" class="headerlink" title="使用 http 模块进行web开发"></a>使用 http 模块进行web开发</h3><ul>
+<li>http.createServer()</li>
+<li>server.on(‘request’,(request,response) =&gt; {});</li>
+<li>request、response对象</li>
+<li>response.write()</li>
+<li>response.end()</li>
+<li>server.listen(port[, hostname][, backlog][, callback]) <h3 id="request"><a href="#request" class="headerlink" title="request"></a>request</h3></li>
+<li>request.headers 请求头</li>
+<li>request.method 请求方法</li>
+<li>request.url 请求路径</li>
+<li>request.httpVersion 请求HTTP协议版本</li>
+</ul>
+<h3 id="response"><a href="#response" class="headerlink" title="response"></a>response</h3><ul>
+<li>res.writeHead(200,{‘Content-Type’: ‘text/html; charset=utf-8’});</li>
+<li>res.write(‘<h1>hello world</h1>‘);</li>
+<li>res.end();<h3 id="通过-req-url和req-method的不同给出不同的响应"><a href="#通过-req-url和req-method的不同给出不同的响应" class="headerlink" title="通过 req.url和req.method的不同给出不同的响应"></a>通过 req.url和req.method的不同给出不同的响应</h3><h3 id="request通过data事件和end事件来接收post的数据"><a href="#request通过data事件和end事件来接收post的数据" class="headerlink" title="request通过data事件和end事件来接收post的数据"></a>request通过data事件和end事件来接收post的数据</h3>req.on(‘end’,function(){<br> //处理请求<br>})<br>res.end(‘成功’);<h3 id="通过-querystring解析post的数据"><a href="#通过-querystring解析post的数据" class="headerlink" title="通过 querystring解析post的数据"></a>通过 querystring解析post的数据</h3>querystring.parse(‘foo=bar&amp;baz=qux&amp;baz=quux&amp;corge’)<br>// returns { foo: ‘bar’, baz: [‘qux’, ‘quux’], corge: ‘’ }<h3 id="url"><a href="#url" class="headerlink" title="url"></a>url</h3>//如果传第二个参数为true，则url模块解析后的对象的query属性是一个对象了<br>//把浏览器传过来了的参数转化成对象<br>var urlObj=url.parse(req.url,true)<br>urlObj.query—&gt;对象</li>
+</ul>
+<p>###同步异步<br>同步会阻塞后面的代码<br>异步则不会</p>
+<p>##异步io模型</p>
+<p>###异步非i/o操作和异步i/o操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">异步非io setTimeout setInterval</div><div class="line">异步IO操作 操作文件 网络操作 fs</div></pre></td></tr></table></figure></p>
+<p>###node的事件驱动模型？<br><img src="./pic/event-loop.png" alt="Alt text"></p>
+<p>###异步和多线程的比较？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">node的异步就是通过异步处理的方式替你去完成多线程的编写</div><div class="line">多线程编程更加灵活</div><div class="line">异步使用起来更加简单</div><div class="line">node擅长io操作~~~</div><div class="line">不擅长cpu密集型---&gt;大量的计算</div></pre></td></tr></table></figure></p>
+<h1 id="2-express"><a href="#2-express" class="headerlink" title="2.express"></a>2.express</h1><h2 id="区别一个什么了是框架，什么是类库？"><a href="#区别一个什么了是框架，什么是类库？" class="headerlink" title="区别一个什么了是框架，什么是类库？"></a>区别一个什么了是框架，什么是类库？</h2><p>类库是你调用他的方法。<br>框架提供了一套规范，你按照这套规范写，框架再来运行你写的代码</p>
+<p>###generator  脚手架工具<br>帮助我们快速构建网站的<br>npm install -g express-generator</p>
+<p>###脚手架构建项目的目录结构<br>app.js<br>package.json<br>/bin<br>/node_modules 包<br>/public  静态文件<br>/routes 路由文件<br>/views 模板文件</p>
+<p>###2.1为什么使用框架？<br>app.use(express.static(path.join(__dirname, ‘public’)));</p>
+<ul>
+<li>原生Node开发，会发现很多问题。比如：<ul>
+<li>呈递静态页面很不方便，需要处理每个HTTP请求</li>
+<li>路由处理不直观清晰,需要写很多字符串判断和正则表达式</li>
+<li>不能集中精力写业务，要考虑很多其它的东西</li>
+</ul>
+</li>
+<li>Express框架致力于解决上述问题。</li>
+<li>例如,jQuery,简化了dom操作，让我们的关注点从如何去操作dom转变成具体我们要操作dom去干什么。<br>###2.2 express介绍</li>
+<li>express 中文官网<a href="http://www.expressjs.com.cn/" target="_blank" rel="external">http://www.expressjs.com.cn/</a></li>
+<li>Express是目前最流行的基于Node.js的Web开发框架，提供各种模块，可以快速地搭建一个具有完整功能的网站。</li>
+<li>Express有着惊艳的路由能力<br>Express中静态资源服务，就是一句话的事儿<br>Express与模板引擎配合，直观清晰。</li>
+</ul>
+<p>###项目开发流程</p>
+<ol>
+<li><p>安装脚手架工具<br>npm install -g express-generator</p>
+</li>
+<li><p>控制台上打命令<br>express 或者 express 加上项目名</p>
+</li>
+<li><p>敲代码<br>###2.3 路由<br>路由器，是告知请求者，所请求的ip在哪里，并且把信息发送过去。<br>web框架的路由，是告知框架，所请求的http参数应该调用的模块、类、方法在哪里，把请求发送过去。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// GET method route</span></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.end(<span class="string">'GET request to the homepage'</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// POST method route</span></div><div class="line">app.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.end(<span class="string">'POST request to the homepage'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>通过模糊匹配路由<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 匹配 acd 和 abcd</span></div><div class="line">app.get(<span class="string">'/ab?cd'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'ab?cd'</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 匹配 abcd、abbcd、abbbcd等 匹配n个加号前的字母</span></div><div class="line">app.get(<span class="string">'/ab+cd'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'ab+cd'</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 匹配 abcd、abxcd、abRABDOMcd、ab123cd等 *代表任意</span></div><div class="line">app.get(<span class="string">'/ab*cd'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'ab*cd'</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 匹配 /abe 和 /abcde</span></div><div class="line">app.get(<span class="string">'/ab(cd)?e'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line"> res.send(<span class="string">'ab(cd)?e'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>通过正则表达匹配路由<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 匹配任何路径中含有 a 的路径：</span></div><div class="line">app.get(<span class="regexp">/a/</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'/a/'</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 匹配 butterfly、dragonfly，不匹配 butterflyman、dragonfly man等</span></div><div class="line">app.get(<span class="regexp">/.*fly$/</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'/.*fly$/'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="2-4-中间件"><a href="#2-4-中间件" class="headerlink" title="2.4 中间件"></a>2.4 中间件</h3><h3 id="2-4-1-什么是中间件？"><a href="#2-4-1-什么是中间件？" class="headerlink" title="2.4.1 什么是中间件？"></a>2.4.1 什么是中间件？</h3><p>通过 app.use(中间件的代码)使用中间件</p>
+<ul>
+<li><p>Express 是一个自身功能极简，完全是由路由和中间件构成一个的 web 开发框架：从本质上来说，一个 Express 应用就是在调用各种中间件。<br>中间件（Middleware）是一个函数，它可以访问请求对象（request object (req)）, 响应对象（response object (res)）, 和 web 应用中处于请求-响应循环流程中的中间件，一般被命名为 next 的变量。</p>
+</li>
+<li><p>往往一个http请求发送到服务器，都需要通过很多的判断和处理。<br>一个请求发送过来—-&gt;用户是否已经登录—-&gt;用户请求的是什么资源(静态资源、动态页面、json数据)—-&gt;统计一下用户的请求—&gt;(如果请求的内容不存在)返回404</p>
+</li>
+<li><p>中间件的功能包括：<br>执行任何代码。<br>修改请求和响应对象。<br>终结请求-响应循环。<br>调用堆栈中的下一个中间件。<br>如果当前中间件没有终结请求-响应循环，则必须调用 next() 方法将控制权交给下一个中间件，否则请求就会挂起。</p>
+</li>
+</ul>
+<h3 id="2-4-2-中间件种类"><a href="#2-4-2-中间件种类" class="headerlink" title="2.4.2 中间件种类"></a>2.4.2 中间件种类</h3><p>Express 应用可使用如下几种中间件：</p>
+<ul>
+<li>内置中间件</li>
+<li>第三方中间件</li>
+</ul>
+<ul>
+<li>错误处理中间件</li>
+<li>应用级中间件</li>
+<li>路由级中间件</li>
+</ul>
+<h3 id="2-4-3-内置中间件"><a href="#2-4-3-内置中间件" class="headerlink" title="2.4.3 内置中间件"></a>2.4.3 内置中间件</h3><ul>
+<li>介绍<br>从 4.x 版本开始，express取消了大部分的内置中间件，除了 express.static, Express 以前内置的中间件现在已经全部单独作为模块安装使用了</li>
+<li>为什么只留一个中间件<br>让express只留一个框，轻量、灵活、便于修改。</li>
+</ul>
+<h3 id="2-4-4-使用中间件"><a href="#2-4-4-使用中间件" class="headerlink" title="2.4.4 使用中间件"></a>2.4.4 使用中间件</h3><ul>
+<li>挂载中间件<br>app.use([path],function)</li>
+<li>回调函数中的参数<br>req, res, next<br>next是一个方法，被调用后，继续走下一个中间件。</li>
+</ul>
+<p>##总结<br>1.路由 通过一种并联的结构，让你的请求找到唯一对应的处理<br>2.中间件 通过串联的形式，过滤器串联起来</p>
+<p>###自定义npm命令</p>
+<p>如果这个npm命令是npm内置的<br>npm + 内置命令  例如 npm start<br>如果这个npm命令是自定义的<br>npm + run +自定义命令  例如 npm run nb</p>
 
       
 
@@ -199,7 +259,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/08/hello-world - 副本/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/04/08/README/">展开全文 >></a>
         </p>
       
 
